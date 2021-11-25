@@ -6,8 +6,13 @@ use Livewire\Component;
 
 class ListaBeer extends Component{
     
+    // Cadastrar
     public $item;
     public $lista = ['Naruto', 'Goku', 'Saitama', 'Rengoku'];
+    
+    // Editar
+    public $atualizar = false;
+    public $key;
 
     public function render(){
         // return view('livewire.lista-beer', ['nome' => 'Darlley']); as propriedades ja estão "public"
@@ -29,5 +34,15 @@ class ListaBeer extends Component{
     }
     public function deleteItem(int $key){
         unset($this->lista[$key]);
+    }
+
+    public function editItem(int $key){
+        $this->atualizar = true;
+        $this->key = $key;
+        $this->item = $this->lista[$key];
+    }
+    public function att(){
+        $this->lista[$this->key] = $this->item;
+        $this->item = "";
     }
 }

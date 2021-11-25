@@ -2,7 +2,7 @@
     <div>
         <h1>Lista</h1>
         <input type="text" placeholder="Insira um nome" wire:model="item">
-        <button wire:click="add">Cadastrar</button>
+        @if($atualizar)<button wire:click="att">Atualizar</button>@else<button wire:click="add">Cadastrar</button>@endif
     </div>
     
     @if($lista)
@@ -11,8 +11,8 @@
         <li>
             <span>
                 {{ $nome }}
+                <button wire:click="editItem({{ $key }})">Editar</button>
                 <button wire:click="deleteItem({{ $key }})">Delete</button>
-                array[{{ $key }}]
             </span>
         </li>
         @endforeach
