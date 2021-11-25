@@ -19,4 +19,12 @@ class ListaBeer extends Component{
         array_unshift($this->lista, $this->item);
         $this->item = '';
     }
+
+    public function clearItem(){
+        array_shift($this->lista); // Limpar o primeiro
+        // array_pop($this->lista); // Limpar o ultimo
+    }
+    public function resetList(){
+        $this->lista = []; // limpar tudo
+    }
 }
