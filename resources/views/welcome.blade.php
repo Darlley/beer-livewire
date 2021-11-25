@@ -9,7 +9,7 @@
         @livewireStyles
     </head>
     <body class="antialiased">
-        <div class="container">Olá mundo - Live</div>
+        @livewire('lista-beer') <!-- Diretiva Blade do Livewire -->
 
         @livewireScripts
     </body>
