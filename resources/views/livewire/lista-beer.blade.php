@@ -2,22 +2,27 @@
     <div>
         <h1>Lista</h1>
         <input type="text" placeholder="Insira um nome" wire:model="item">
-        <button type="submit" wire:click="add">Cadastrar</button>
-
+        <button wire:click="add">Cadastrar</button>
     </div>
     
     @if($lista)
-    <ul>
-        @foreach ($lista as $nome)
+    <ol>
+        @foreach ($lista as $key => $nome)
         <li>
-            <span>{{ $nome }}</span>
+            <span>
+                {{ $nome }}
+                <button wire:click="deleteItem({{ $key }})">Delete</button>
+                array[{{ $key }}]
+            </span>
         </li>
         @endforeach
-    </ul>
+    </ol>
     <div>
-        <button wire:click="clearItem">Limpar</button>
+        <button wire:click="clearFirst">Limpar</button>
         <button wire:click="resetList">Resetar</button>
     </div>
+    <p>{{ var_dump($lista) }}</p>
+
     @else 
     <p>Lista vazia...</p>
     @endif
