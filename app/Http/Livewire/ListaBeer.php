@@ -47,7 +47,8 @@ class ListaBeer extends Component{
         // $this->lista = array_replace($this->lista, [
         //     $this->key => $this->item
         // ]);
-        
+
         $this->item = "";
+        $this->atualizar = false;
     }
 }
