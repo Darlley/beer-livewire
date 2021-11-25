@@ -43,6 +43,11 @@ class ListaBeer extends Component{
     }
     public function att(){
         $this->lista[$this->key] = $this->item;
+        
+        // $this->lista = array_replace($this->lista, [
+        //     $this->key => $this->item
+        // ]);
+        
         $this->item = "";
     }
 }
