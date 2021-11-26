@@ -5,10 +5,10 @@ namespace App\Http\Livewire;
 use Livewire\Component;
 
 class ListaBeer extends Component{
-    
+
     // Cadastrar
     public $item;
-    public $lista = ['Naruto', 'Goku', 'Saitama', 'Rengoku'];
+    public $lista = [];
     
     // Editar
     public $atualizar = false;

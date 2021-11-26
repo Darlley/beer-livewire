@@ -9,8 +9,17 @@
         @livewireStyles
     </head>
     <body class="antialiased">
-        @livewire('lista-beer') <!-- Diretiva Blade do Livewire -->
+        <div>
+            <p>Menu de Navegação</p>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/app">Aplicação</a></li>
+            </ul>
+        </div>
+
+        {{ $slot }}
 
         @livewireScripts
+        <script src="{{ asset('js/app.js') }}"></script>
     </body>
 </html>

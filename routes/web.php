@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Livewire\{
+    Home
+};
+use App\Http\Livewire\ListaBeer;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', Home::class);
+Route::get('/app', ListaBeer::class);
+// Route::get('/', Home::class);
