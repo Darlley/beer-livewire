@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Http;
 class Home extends Component
 
 {
-    public $cep;
+    public $username;
     public $profile;
 
     public function render(){
@@ -16,7 +16,11 @@ class Home extends Component
     }
 
     public function getUser(){
-        $response = Http::get("https://api.github.com/users/" . $this->cep);
+        $this->validate([
+            'username' => 'required|min:1'
+        ]);
+
+        $response = Http::get("https://api.github.com/users/" . $this->username);
         // $response = Http::get("viacep.com.br/ws/" . $this->cep . "/json/");
         $this->profile = $response->json();
     }

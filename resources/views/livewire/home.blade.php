@@ -3,16 +3,22 @@
     
     <div class="container-app">
         <div class="">
-            <input type="text" placeholder="ID do Github" wire:model="cep" wire:keydown.enter="getUser">
+            <input type="text" placeholder="ID do Github" id="user" wire:model="cep" wire:keydown.enter="getUser">
+            @error('username')
+                <span style="color: #ff6262;font-family: monospace;text-transform: capitalize;font-size: 14px;">{{$message}}</span>
+            @enderror
 
             <div>
-                <button class="btn btn-primary" type="button" wire:click.prevent="getUser">
-                    <span wire:loading wire:target="getUser" class="visually-hidden"></span>
-                    Buscar Github
+                <button class="btn btn-primary" type="button" wire:loading.attr="disabled" wire:click.prevent="getUser">
+                    <div style="display: flex; align-items: center;">
+                        <div class="spinner-border" role="status" wire:loading wire:target="getUser" style="width: 1rem !important; height: 1rem !important;">
+                            <span class="visually-hidden"></span>
+                        </div>
+                        Buscar Github
+                    </div>
                 </button>
             </div>
 
-            <p>
             @if ($profile)
             <div class="carde">
                 <div class="container-profile">
@@ -35,7 +41,7 @@
                 .carde{
                     display: flex;
                     flex-direction: column;
-                    max-width: 250px;
+                    max-width: max-content;
                     margin: 0 auto;
                     background-color: #131313;
                     border-radius: 8px;
@@ -90,7 +96,6 @@
                 }
             </style>
             @endif
-            </p>
         </div>
     </div>
 </div>
