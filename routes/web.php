@@ -2,7 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Livewire\{
-    Home
+    Home,
+    ContactForm    
 };
 use App\Http\Livewire\ListaBeer;
 
@@ -19,4 +20,5 @@ use App\Http\Livewire\ListaBeer;
 
 Route::get('/', Home::class);
 Route::get('/app', ListaBeer::class);
-// Route::get('/', Home::class);
+
+Route::get('/contact', ContactForm::class);

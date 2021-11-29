@@ -18,6 +18,7 @@
             <ul>
                 <li><a href="/">Home</a></li>
                 <li><a href="/app">Aplicação</a></li>
+                <li><a href="/contact">Formulário</a></li>
             </ul>
         </div>
 

@@ -3,7 +3,7 @@
     
     <div class="container-app">
         <div class="">
-            <input type="text" placeholder="ID do Github" id="user" wire:model="cep" wire:keydown.enter="getUser">
+            <input type="text" placeholder="ID do Github" id="user" wire:model="username" wire:keydown.enter="getUser">
             @error('username')
                 <span style="color: #ff6262;font-family: monospace;text-transform: capitalize;font-size: 14px;">{{$message}}</span>
             @enderror
